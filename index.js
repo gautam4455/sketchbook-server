@@ -11,6 +11,10 @@ const URL = isDev ? 'http://localhost:3000' : 'https://isketchbook.vercel.app/';
 
 app.use(cors({ origin: URL }))
 
+app.get('/', (req, res) => {
+  res.send('Sketchbook Server Home')
+})
+
 const httpServer = createServer(app);
 
 const io = new Server(httpServer, { cors: URL });
